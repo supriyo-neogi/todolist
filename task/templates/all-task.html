@@ -1,0 +1,30 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All task</title>
+  
+</head>
+<body>
+  <h1>TO DO LIST</h1>
+  <h2>All Task</h2>
+  <a href={% url "home" %}>
+    <button type="button"> Add New task</button>
+  </a>
+  <ul>
+    {% for task in tasks %}
+    <li>Title: {{ task.title|capfirst}}<br>
+    Description: {{task.description|capfirst}} Status:{{task.completed}}
+    <br>Task Created on: {{task.created_on}}<br><br>
+    </li>
+    {% endfor %}
+  </ul>
+
+  
+    
+  
+</body>
+</html>
